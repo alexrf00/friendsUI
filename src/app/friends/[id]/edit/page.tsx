@@ -5,11 +5,6 @@ import { DashboardHeader } from "@/shared/components/Dashboard-header"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getFriend } from "@/lib/api"
-import { Friend } from "@/lib/types"
-
-interface EditFriendPageProps {
-  friend: Friend
-}
 
 export default async function EditFriendPage({ params }: { params: { id: string } }) {
   const session = await getSession()
