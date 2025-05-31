@@ -1,6 +1,6 @@
 import { getSession } from "@/lib/auth"
 import { redirect } from "next/navigation"
-import { FriendForm } from "@/features/friends/components/friend-form"
+import { FriendForm } from "@/features/friends/components/Friend-form"
 import { DashboardHeader } from "@/shared/components/Dashboard-header"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
