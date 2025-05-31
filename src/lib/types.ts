@@ -4,7 +4,7 @@ export interface User {
   email: string
 }
 
-export interface Params {
+export interface Friend {
   id: string
 }
 

@@ -5,22 +5,22 @@ import { DashboardHeader } from "@/shared/components/Dashboard-header"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getFriend } from "@/lib/api"
-import { Params } from "@/lib/types"
+import { Friend } from "@/lib/types"
 
 interface EditFriendPageProps {
-  params: Params
+  friend: Friend
 }
 
-export default async function EditFriendPage({ params }: EditFriendPageProps) {
+export default async function EditFriendPage({ friend }: EditFriendPageProps) {
   const session = await getSession()
 
   if (!session) {
     redirect("/login")
   }
 
-  const friend = await getFriend(params.id)
+  const friendObj = await getFriend(friend.id)
 
-  if (!friend) {
+  if (!friendObj) {
     redirect("/dashboard")
   }
 
@@ -40,7 +40,7 @@ export default async function EditFriendPage({ params }: EditFriendPageProps) {
           <h1 className="text-3xl font-bold mt-4">Edit Friend</h1>
         </div>
 
-        <FriendForm friend={friend} />
+        <FriendForm friend={friendObj} />
       </main>
     </div>
   )
