@@ -6,7 +6,9 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getFriend } from "@/lib/api"
 
-export default async function EditFriendPage({ params }: { params: { id: string } }) {
+export default async function EditFriendPage({
+  params,
+}: { params: { id: string } }){
   const session = await getSession()
 
   if (!session) {
