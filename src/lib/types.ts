@@ -4,6 +4,11 @@ export interface User {
   email: string
 }
 
+export interface Params {
+  id: string
+}
+
+
 export interface Friend {
   id: string
   name: string
