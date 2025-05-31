@@ -11,14 +11,14 @@ interface EditFriendPageProps {
   friend: Friend
 }
 
-export async function EditFriendPage({ friend }: EditFriendPageProps) {
+export default async function EditFriendPage({ params }: { params: { id: string } }) {
   const session = await getSession()
 
   if (!session) {
     redirect("/login")
   }
 
-  const friendObj = await getFriend(friend.id)
+  const friendObj = await getFriend(params.id)
 
   if (!friendObj) {
     redirect("/dashboard")
