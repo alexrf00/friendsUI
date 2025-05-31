@@ -21,7 +21,7 @@ export default async function EditFriendPage({ params }: { params: { id: string 
 
   return (
     <div className="flex min-h-screen flex-col">
-      <DashboardHeader user={session.user} />
+      <DashboardHeader session={session} />
 
       <main className="flex-1 container max-w-3xl py-10 px-4">
         <div className="mb-8">

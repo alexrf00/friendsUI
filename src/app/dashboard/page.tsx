@@ -15,7 +15,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <DashboardHeader user={session} />
+      <DashboardHeader session={session} />
 
       <main className="flex-1 container max-w-5xl py-10 px-4">
         <div className="flex justify-between items-center mb-8">
