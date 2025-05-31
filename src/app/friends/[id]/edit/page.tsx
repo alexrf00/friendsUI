@@ -6,10 +6,6 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getFriend } from "@/lib/api"
 
-interface EditFriendPageProps {
-  params: { id: string }
-}
-
 export default async function EditFriendPage({
   params,
 }: {
