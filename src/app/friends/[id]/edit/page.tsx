@@ -10,7 +10,11 @@ interface EditFriendPageProps {
   params: { id: string }
 }
 
-export default async function EditFriendPage({ params }: EditFriendPageProps) {
+export default async function EditFriendPage({
+  params,
+}: {
+  params: { id: string }
+}) {
   const session = await getSession()
 
   if (!session) {
