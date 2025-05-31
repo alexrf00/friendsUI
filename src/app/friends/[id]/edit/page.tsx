@@ -11,7 +11,7 @@ interface EditFriendPageProps {
   friend: Friend
 }
 
-export default async function EditFriendPage({ friend }: EditFriendPageProps) {
+export async function EditFriendPage({ friend }: EditFriendPageProps) {
   const session = await getSession()
 
   if (!session) {
