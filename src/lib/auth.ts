@@ -28,7 +28,7 @@ export async function getSession(): Promise<Session | null> {
 
     const user = await response.json()
     return { user, token }
-  } catch (error) {
+  } catch {
     return null
   }
 }
@@ -106,7 +106,7 @@ export async function logout(): Promise<void> {
           Authorization: `Bearer ${token}`,
         },
       })
-    } catch (error) {
+    } catch {
       // Continue with logout even if the API call fails
     }
   }

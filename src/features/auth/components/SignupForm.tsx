@@ -30,7 +30,7 @@ export function SignupForm() {
       await signup(name, email, password)
       router.push("/dashboard")
       router.refresh()
-    } catch (err) {
+    } catch {
       setError("Failed to create account. Please try again.")
       setIsLoading(false)
     }

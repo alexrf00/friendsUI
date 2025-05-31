@@ -54,7 +54,7 @@ export function FriendForm({ friend }: FriendFormProps) {
       }
       router.push("/dashboard")
       router.refresh()
-    } catch (err) {
+    } catch {
       setError(isEditing ? "Failed to update friend" : "Failed to add friend")
       setIsLoading(false)
     }

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { logout } from "@/lib/auth"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import type { Session, User } from "@/lib/types"
+import type { Session } from "@/lib/types"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,15 +20,15 @@ interface DashboardHeaderProps {
 }
 
 export function DashboardHeader({ session }: DashboardHeaderProps) {
+  const router = useRouter()
   if(!session){
     return null;
   }
-  const router = useRouter()
 
   const handleLogout = async () => {
     await logout()
-    router.push("/")
     router.refresh()
+    router.push("/")
   }
 
   return (

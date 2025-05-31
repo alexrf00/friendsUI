@@ -30,7 +30,7 @@ export function FriendsList() {
       try {
         const data = await getFriends()
         setFriends(data)
-      } catch (error) {
+      } catch {
         toast.error('Failed to load friends', {
           description: 'Please try again later.',
         })
@@ -49,7 +49,7 @@ export function FriendsList() {
       toast.success('success',{
         description: 'Friend deleted successfully',
       })
-    } catch (error) {
+    } catch {
       toast.error("Error", {
         description: "Failed to delete friend",
       })

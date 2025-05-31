@@ -28,7 +28,7 @@ export function LoginForm() {
     try {
       await login(email, password)
       router.replace("/dashboard")
-    } catch (err) {
+    } catch {
       setError("Invalid email or password. Please try again.")
       setIsLoading(false)
     }
