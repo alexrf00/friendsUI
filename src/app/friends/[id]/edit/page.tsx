@@ -6,15 +6,17 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getFriend } from "@/lib/api"
 
-export default async function EditFriendPage({ params }: { params: { id: string } }) {
-  const session = await getSession()
+type Params = Promise<{ id: string }>
 
+export default async function EditFriendPage({ params }: { params: Params }) {
+  const { id } = await params
+
+  const session = await getSession()
   if (!session) {
     redirect("/login")
   }
 
-  const friendObj = await getFriend(params.id)
-
+  const friendObj = await getFriend(id)
   if (!friendObj) {
     redirect("/dashboard")
   }
