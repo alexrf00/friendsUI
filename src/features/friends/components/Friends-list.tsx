@@ -40,7 +40,7 @@ export function FriendsList() {
     }
 
     loadFriends()
-  }, [toast])
+  })
 
   const handleDelete = async (id: string) => {
     try {
